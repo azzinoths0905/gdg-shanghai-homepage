@@ -1,31 +1,74 @@
 <template>
   <v-container class="pa-0">
-    <v-snackbar v-model="errorAlert" bottom left>
+    <v-snackbar
+      v-model="errorAlert"
+      bottom
+      left
+    >
       {{ errorMsg }}
-      <v-btn color="pink" flat @click="errorAlert = false">Close</v-btn>
+      <v-btn
+        color="pink"
+        flat
+        @click="errorAlert = false"
+      >Close</v-btn>
     </v-snackbar>
 
-    <v-layout wrap align-center justify-center row fill-height class="my-3">
-      <v-flex xs12 md9 lg9 class="pa-2 text-xs-center">
-        <p class="google-font" style="font-size:170%">Our Events & Meetups</p>
+    <v-layout
+      wrap
+      align-center
+      justify-center
+      row
+      fill-height
+      class="my-3"
+    >
+      <v-flex
+        xs12
+        md9
+        lg9
+        class="pa-2 text-xs-center"
+      >
+        <p
+          class="google-font"
+          style="font-size:170%"
+        >我们的活动</p>
         <p
           class="google-font"
           style="font-size:120%"
-        >At sessions that span from the technical to the visionary, let’s celebrate and discover what the technologies can enable: how product innovation, open source, and ML and AI can propel enterprises forward and solve the big problems that impact all of us.</p>
+        >技术指向未来，让我们一起来发现技术可以实现什么，产品创新、开源社区和人工智能又将如何推动企业发展、解决问题，让我们的生活更加丰富多彩。</p>
         <router-link
           to="/events"
           flat
           color="#4C4A78"
           class="ma-0 google-font"
           style="border-radius:5px;text-transform: capitalize;text-decoration:none;color:#4C4A78"
-        >See More</router-link>
+        >查看更多</router-link>
       </v-flex>
     </v-layout>
 
-    <v-layout wrap align-start justify-center row fill-height class="hidden-sm-and-down mb-4">
-      <v-flex xs12 v-if="showLoader">
-        <v-layout row wrap>
-          <v-flex xs12 sm6 md3 lg3 v-for="n in 4" :key="`4${n}`">
+    <v-layout
+      wrap
+      align-start
+      justify-center
+      row
+      fill-height
+      class="hidden-sm-and-down mb-4"
+    >
+      <v-flex
+        xs12
+        v-if="showLoader"
+      >
+        <v-layout
+          row
+          wrap
+        >
+          <v-flex
+            xs12
+            sm6
+            md3
+            lg3
+            v-for="n in 4"
+            :key="`4${n}`"
+          >
             <v-card
               flat
               class="ma-1 pa-1 my-0 elevation-0"
@@ -54,13 +97,23 @@
 
               <v-card-actions class="mt-0">
                 <v-spacer></v-spacer>
-                <span class="animate-shimmer" style="color:#424242;width:60px;height:25px;"></span>
+                <span
+                  class="animate-shimmer"
+                  style="color:#424242;width:60px;height:25px;"
+                ></span>
               </v-card-actions>
             </v-card>
           </v-flex>
         </v-layout>
       </v-flex>
-      <v-flex xs12 sm6 md3 lg3 v-for="(item,i) in eventsData" :key="i">
+      <v-flex
+        xs12
+        sm6
+        md3
+        lg3
+        v-for="(item,i) in eventsData"
+        :key="i"
+      >
         <v-card
           flat
           class="ma-1 pa-1 my-0"
@@ -68,16 +121,28 @@
         >
           <v-card-title class="mb-0">
             <div>
-              <p class="google-font mb-0" style="font-size:130%">{{ item.name | summery(25) }}</p>
-              <p class="google-font mt-1 mb-0" style="font-size:110%">
+              <p
+                class="google-font mb-0"
+                style="font-size:130%"
+              >{{ item.name | summery(25) }}</p>
+              <p
+                class="google-font mt-1 mb-0"
+                style="font-size:110%"
+              >
                 <v-icon small>insert_invitation</v-icon>
                 {{item.local_date | dateFilter}}
               </p>
-              <p class="google-font mt-0 mb-0" style="font-size:110%">
+              <p
+                class="google-font mt-0 mb-0"
+                style="font-size:110%"
+              >
                 <v-icon small>watch_later</v-icon>
                 {{item.local_time}}
               </p>
-              <p class="google-font mt-0 mb-0" style="font-size:110%">
+              <p
+                class="google-font mt-0 mb-0"
+                style="font-size:110%"
+              >
                 <v-icon small>map</v-icon>
                 {{item.venue.name | summery(30)}}
               </p>
@@ -98,23 +163,57 @@
         </v-card>
       </v-flex>
 
-      <v-flex xs12 v-if="notFoundEventFlag==true" class="text-xs-center">
-        <p class="google-font px-2" style="font-size:140%">
-          <v-icon>highlight_off</v-icon>Events Not Found!
+      <v-flex
+        xs12
+        v-if="notFoundEventFlag==true"
+        class="text-xs-center"
+      >
+        <p
+          class="google-font px-2"
+          style="font-size:140%"
+        >
+          <v-icon>highlight_off</v-icon>抱歉，暂时找不到活动
         </p>
       </v-flex>
     </v-layout>
 
     <!-- Mobile Screen -->
-    <v-layout wrap align-center justify-center row fill-height class="hidden-md-and-up mb-3">
-      <v-flex xs12 v-if="showLoader">
-        <v-layout row wrap>
-          <v-flex xs12 sm6 md4 lg4 v-for="n in 4" :key="`4${n}`">
-            <v-list two-line subheader class="pa-2">
+    <v-layout
+      wrap
+      align-center
+      justify-center
+      row
+      fill-height
+      class="hidden-md-and-up mb-3"
+    >
+      <v-flex
+        xs12
+        v-if="showLoader"
+      >
+        <v-layout
+          row
+          wrap
+        >
+          <v-flex
+            xs12
+            sm6
+            md4
+            lg4
+            v-for="n in 4"
+            :key="`4${n}`"
+          >
+            <v-list
+              two-line
+              subheader
+              class="pa-2"
+            >
               <v-list-tile avatar>
                 <v-list-tile-avatar>
                   <v-avatar color="animate-shimmer">
-                    <span class="google-font" style="width:100vh;"></span>
+                    <span
+                      class="google-font"
+                      style="width:100vh;"
+                    ></span>
                   </v-avatar>
                 </v-list-tile-avatar>
 
@@ -140,7 +239,11 @@
 
       <v-flex xs12>
         <v-slide-y-reverse-transition>
-          <v-list two-line subheader v-show="showData">
+          <v-list
+            two-line
+            subheader
+            v-show="showData"
+          >
             <v-list-tile
               v-for="(item,i) in eventsData"
               :key="i"
@@ -149,20 +252,27 @@
             >
               <v-list-tile-avatar>
                 <v-avatar color="grey lighten-2">
-                  <span class="google-font" style="width:100vh">{{getCharString(item.name)}}</span>
+                  <span
+                    class="google-font"
+                    style="width:100vh"
+                  >{{getCharString(item.name)}}</span>
                 </v-avatar>
               </v-list-tile-avatar>
 
               <v-list-tile-content>
                 <v-list-tile-title class="google-font">{{ item.name }}</v-list-tile-title>
-                <v-list-tile-sub-title
-                  class="google-font"
-                >{{ item.local_date |dateFilter }} | {{ item.local_time }}</v-list-tile-sub-title>
+                <v-list-tile-sub-title class="google-font">{{ item.local_date |dateFilter }} | {{ item.local_time }}</v-list-tile-sub-title>
               </v-list-tile-content>
 
               <v-list-tile-action>
                 <v-tooltip bottom>
-                  <v-btn icon ripple :href="item.link" target="_blank" slot="activator">
+                  <v-btn
+                    icon
+                    ripple
+                    :href="item.link"
+                    target="_blank"
+                    slot="activator"
+                  >
                     <v-icon color="grey darken-1">info</v-icon>
                   </v-btn>
 
@@ -173,9 +283,16 @@
           </v-list>
         </v-slide-y-reverse-transition>
       </v-flex>
-      <v-flex xs12 v-if="notFoundEventFlag==true" class="text-xs-center">
-        <p class="google-font px-2" style="font-size:140%">
-          <v-icon>highlight_off</v-icon>Events Not Found!
+      <v-flex
+        xs12
+        v-if="notFoundEventFlag==true"
+        class="text-xs-center"
+      >
+        <p
+          class="google-font px-2"
+          style="font-size:140%"
+        >
+          <v-icon>highlight_off</v-icon>抱歉，暂时找不到活动
         </p>
       </v-flex>
     </v-layout>
@@ -197,6 +314,8 @@ export default {
       notFoundEventFlag: false
     };
   },
+
+  // TODO(Ron): Need to change the URL to our current mentup account.
   created() {
     fetch(
       "https://cors-anywhere.herokuapp.com/https://api.meetup.com/" +
@@ -237,10 +356,10 @@ export default {
   },
   filters: {
     summery: (val, num) => {
-      if(val.length > num){
-        return val.substring(0,num)+".."
-      }else{
-        return val
+      if (val.length > num) {
+        return val.substring(0, num) + "..";
+      } else {
+        return val;
       }
     },
     dateFilter: value => {

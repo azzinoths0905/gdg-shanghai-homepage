@@ -14,7 +14,7 @@
         <p
           class="google-font mt-2 mb-0"
           style="font-size:170%;color:#37474F;"
-        >Partners</p>
+        >合作贡献</p>
         <p
           class="google-font mt-1 mb-0"
           style="font-size:120%"
@@ -128,7 +128,7 @@
         <p
           class="google-font my-2"
           style="font-size:110%"
-        >模板贡献</p>
+        >特别赞助</p>
 
         <v-layout class="transparent">
           <v-flex

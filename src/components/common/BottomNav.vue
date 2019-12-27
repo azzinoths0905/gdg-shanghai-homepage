@@ -1,12 +1,16 @@
 <template>
-  <v-card color="white" height="60px" class="white hidden-sm-and-up" flat>
+  <v-card
+    color="white"
+    height="60px"
+    class="white hidden-sm-and-up"
+    flat
+  >
     <v-bottom-nav
       :active.sync="bottomNav"
       :value="true"
       app
       color="white"
       class="elevation-2"
-      
     >
       <v-btn
         color="#518FF5"
@@ -15,7 +19,7 @@
         router
         to="/home"
       >
-        <span>Home</span>
+        <span>首页</span>
         <v-icon>dashboard</v-icon>
       </v-btn>
 
@@ -26,7 +30,7 @@
         router
         to="/events"
       >
-        <span>Events</span>
+        <span>活动</span>
         <v-icon>rounded_corner</v-icon>
       </v-btn>
 
@@ -37,7 +41,7 @@
         router
         to="/team"
       >
-        <span>Team</span>
+        <span>团队</span>
         <v-icon>group</v-icon>
       </v-btn>
 
@@ -48,11 +52,9 @@
         router
         to="/about"
       >
-        <span>About</span>
+        <span>关于</span>
         <v-icon>toc</v-icon>
       </v-btn>
-
-      
 
       <!-- <v-btn
         color="#518FF5"
@@ -71,17 +73,17 @@
 
 
 <script>
-  export default {
-    data () {
-      return {
-        bottomNav: 'recent',
-        items: [
-            { title: 'Home', icon: 'dashboard', route:"/home" },
-            { title: 'Attending', icon: 'rounded_corner', route:"/attending" },
-            { title: 'Sessions', icon: 'toc', route:"/sessions" },
-            { title: 'Speakers', icon: 'group', route:"/speakers" }
-        ],
-      }
-    }
+export default {
+  data() {
+    return {
+      bottomNav: "recent",
+      items: [
+        { title: "Home", icon: "dashboard", route: "/home" },
+        { title: "Attending", icon: "rounded_corner", route: "/attending" },
+        { title: "Sessions", icon: "toc", route: "/sessions" },
+        { title: "Speakers", icon: "group", route: "/speakers" }
+      ]
+    };
   }
+};
 </script>

@@ -315,7 +315,6 @@ export default {
     };
   },
 
-  // TODO(Ron): Need to change the URL to our current mentup account.
   created() {
     fetch(
       "https://cors-anywhere.herokuapp.com/https://api.meetup.com/" +

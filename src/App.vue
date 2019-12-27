@@ -37,6 +37,7 @@
 </template>
 
 <script>
+// TODO(Ron): Change the domain name
 import CoreDrawer from '@/components/common/Drawer'
 import CoreToolbar from '@/components/common/Toolbar'
 import CoreFooter from '@/components/common/Footer'

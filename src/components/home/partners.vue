@@ -205,6 +205,7 @@
 </template>
 
 <script>
+// TODO(Ron): Change the sponsors
 import datap from "@/assets/data/partners.json";
 import chapterDetails from "@/assets/data/chapterDetails.json";
 export default {

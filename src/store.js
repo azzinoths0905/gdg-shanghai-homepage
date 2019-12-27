@@ -8,8 +8,8 @@ export default new Vuex.Store({
     drawer: false,
     items: [ 
       { text: '首页', to: '/', icon:'home'},
-      { text: '活动', to: '/events', icon: 'rounded_corner'},
-      { text: '团队', to: '/team', icon:'group'},
+      { text: '社区活动', to: '/events', icon: 'rounded_corner'},
+      { text: '团队成员', to: '/team', icon:'group'},
       { text: '关于我们', to: '/about', icon: 'toc'},
       { text: '联系方式', to: '/contact', icon:'person'}
     ]

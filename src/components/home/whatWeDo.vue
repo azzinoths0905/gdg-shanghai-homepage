@@ -66,7 +66,7 @@
           flat
           class="ml-0 google-font hidden-md-and-down"
           dark
-        >Learn More</v-btn>
+        >查看更多</v-btn>
 
       </v-flex>
       <v-flex

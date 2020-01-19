@@ -17,11 +17,11 @@
 
         <v-layout wrap align-center justify-center row fill-height class="mt-0 mb-0" >
            <v-flex xs12 md12 lg12 class="pa-2 mb-0">
-               <p class="google-font mb-0" style="font-size:170%;color:#0277bd">Directory of past events</p>
+               <p class="google-font mb-0" style="font-size:170%;color:#0277bd">过去的活动</p>
                <p class="google-font mt-0 mb-0" style="font-size:110%;color:#616161 ">
-                   Events are listed in reverse chronological order by date.
+                   活动在这里按照举办时间倒序排列
                </p>     
-               <p class="google-font" style="font-size:110%;color:#616161 ">Here are the recent 10 meetups. To know more about the past meetups <a :href="chapterDetails.ChapterMeetupLink" target="_blank" style="text-decoration:none;color:#0277bd">Click here</a></p>
+               <p class="google-font" style="font-size:110%;color:#616161 ">这里有最近的10个活动。想要了解更多的活动，请<a :href="chapterDetails.ChapterMeetupLink" target="_blank" style="text-decoration:none;color:#0277bd">点击这里</a></p>
 
             </v-flex> 
         </v-layout>

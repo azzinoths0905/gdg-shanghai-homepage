@@ -98,7 +98,7 @@
           </v-card-actions>
         </v-card>
       </v-flex>
-      
+
       <v-flex
         xs12
         sm6
@@ -157,7 +157,7 @@
               target="_blank"
               class="mb-0 ml-0 mt-0 google-font"
               style="border-radius:7px;text-transform: capitalize;"
-            >See More</v-btn>
+            >了解详情</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
